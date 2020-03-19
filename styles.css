@@ -1,0 +1,198 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+   margin:0;
+   padding:0;
+   height:500px;
+   background:#2e271e;
+   text-align:center;
+}
+
+a:link {color:#FFF;}    /* unvisited link */
+a:visited {color:#999;} /* visited link */
+a:hover {color:#999;}   /* mouse over link */
+a:active {color:#999;}  /* selected link */
+
+img {
+	border:0px;
+	padding:0px;
+	margin:0px;
+}
+
+#container {
+	min-height:100%;
+	width: 780px;
+	margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
+	/*border: thin solid #000;*/
+	position: relative;
+}
+
+
+#header {
+	height: auto;
+	text-align:center;
+	padding-bottom:10px;
+	
+}
+
+#header h1 {
+	color:#fff;
+	font-size:40px;
+	font-family: 'Arimo', sans-serif;
+	font-weight: bold;
+}
+
+
+#body {
+   padding:15px;
+   padding-bottom:10px; /* Height of the footer */
+   height: auto;
+   color:#fff;
+   text-align:center;
+  
+}
+.title {
+	color:#fff;
+	font-family: 'Arimo', sans-serif;
+	font-size:36px;
+	text-transform:capitalize;
+}
+
+.subtitle {
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:14px;
+	color:#CCC;
+	text-transform:none;
+}
+
+.upcoming_auction {
+	text-align:left;
+	padding-top:10px;
+	padding-bottom:7px;
+	background-image:url(/images/hr.png);
+	background-position:bottom;
+	background-repeat:no-repeat;
+	font-family: Verdana, Geneva, sans-serif;	
+}
+
+.upcoming_auction img {
+/*	float:right;
+	position:relative;
+	bottom:10px;
+	padding-left:5px;*/
+	padding:5px;
+}
+
+.auction-title {
+	color:#fff;
+	font-family: 'Arimo', sans-serif;
+	font-size:36px;
+	text-transform:capitalize;
+	text-align:center;
+}
+
+.auction-date {
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:20px;
+	color:#CCC;
+	text-transform:capitalize;
+	text-align:center;
+	font-weight:bold;
+}
+
+.auction-addr {
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:16px;
+	color:#CCC;
+	text-transform:capitalize;
+	text-align:center;
+}
+
+.auction-addr img {padding:5px;}
+
+.auction-info {
+	background-color:#584020;
+	margin-left:100px;
+	margin-right:100px;
+	margin-top:25px;
+	text-align:center;
+	padding:10px;
+	text-transform:uppercase;
+}
+.auction-info p {
+	padding-top:0px;
+	padding-bottom:5px;
+}
+.disclaimer {
+	font-size:12px;
+	font-weight:bold;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+.services {
+	text-align:left;
+	margin-left:300px;
+	margin-right:150px;
+}
+
+#footer {	
+	width:100%;
+	height:15px;   /* Height of the footer */
+	font-size: 10px;
+	text-align: center;
+	font-weight: normal;
+	color:#fff;
+}
+strong {
+	font-weight: 900;
+}
+
+#gallery {
+	width:100%;
+	overflow: visible;
+	text-align:center;
+}
+
+#gallery img {
+	margin:5px;
+	border: 3px double white;
+}
+.galleryheader {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	font-weight: bold;
+	color: #FFF;
+}
+.update {
+	font-size: 9px;
+	color: #000;
+	background-color: #CCC;
+	float: left;
+}
+
+.go-top {
+	position: fixed;
+	bottom: 2em;
+	right: 2em;
+	text-decoration: none;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.3);
+	font-size: 12px;
+	padding: 1em;
+	display: none;
+}
+
+.go-top:hover {
+	background-color: rgba(0, 0, 0, 0.6);
+}
+.button{
+  background:#584020;
+  font-size:11px;
+  text-transform: uppercase;
+  color:#ffd98d;
+  padding:4px;
+  border-radius:3px;
+  font-weight:bold;
+}

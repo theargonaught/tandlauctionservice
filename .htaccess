@@ -1,0 +1,9 @@
+redirect 301 /thisweek.htm http://www.tandlauctionservice.com/thisweek.html
+redirect 301 /aboutus.htm http://www.tandlauctionservice.com/about.html
+redirect 301 /antiques.htm http://www.tandlauctionservice.com/antiques.html
+redirect 301 /contactus.htm http://www.tandlauctionservice.com/contactus.html
+redirect 301 /index.htm http://www.tandlauctionservice.com/index.html
+redirect 301 /newsletter.htm http://www.tandlauctionservice.com/newsletter.html
+redirect 301 /services.htm http://www.tandlauctionservice.com/services.html
+
+ErrorDocument 404 /notfound.html
