@@ -1,0 +1,371 @@
+<!--GITHUB-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/auction-page.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Public Auction - T&amp;L Auction Service</title>
+<!-- InstanceEndEditable -->
+<link href="/styles.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Arimo:700&v2' rel='stylesheet' type='text/css'>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Verdana, Geneva, sans-serif;
+}
+-->
+</style>
+<!-- InstanceBeginEditable name="head" -->
+<!-- Add jQuery library -->
+	<script type="text/javascript" src="fancybox/lib/jquery-1.10.1.min.js"></script>
+
+	<!-- Add mousewheel plugin (this is optional) -->
+	<script type="text/javascript" src="fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+
+	<!-- Add fancyBox main JS and CSS files -->
+	<script type="text/javascript" src="/fancybox/source/jquery.fancybox.js?v=2.1.5"></script>
+	<link rel="stylesheet" type="text/css" href="/fancybox/source/jquery.fancybox.css?v=2.1.5" media="screen" />
+
+	<!-- Add Button helper (this is optional) -->
+	<link rel="stylesheet" type="text/css" href="/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+	<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+
+	<!-- Add Thumbnail helper (this is optional) -->
+	<link rel="stylesheet" type="text/css" href="/fancybox/source/helpers/jquery.fancybox-piclens_thumbs.css?v=1.0.7" />
+	<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-piclens_thumbs.js?v=1.0.7"></script>
+
+	<!-- Add Media helper (this is optional) -->
+	<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox();
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				openEffect : 'none',
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-piclens_thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					piclens_thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						piclens_thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+	<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+<!-- InstanceEndEditable -->
+<script type="text/javascript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-24913810-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+<body leftmargin="0" topmargin="0" onload="MM_preloadImages('/images/home-over.png','/images/thisweek-over.png','/images/antiques-over.png','/images/contact-over.png','/images/services-over.png','/images/newsletter-over.png','/images/about-over.png')">
+<div id="container">
+	<div id="header">
+  <img src="/images/logo.jpg" style="padding:10px;"/><br />
+  <a href="/index.html"><img src="/images/home.png" name="home" id="home" onmouseover="MM_swapImage('home','','/images/home-over.png',1)" onmouseout="MM_swapImgRestore()"></a><a href="/thisweek.html"><img src="/images/thisweek.png" name="thisweek" id="thisweek" onmouseover="MM_swapImage('thisweek','','/images/thisweek-over.png',1)" onmouseout="MM_swapImgRestore()"></a><a href="/antiques.html"><img src="/images/antiques.png" name="antiques" id="antiques" onmouseover="MM_swapImage('antiques','','/images/antiques-over.png',1)" onmouseout="MM_swapImgRestore()"></a><a href="/contact.html"><img src="/images/contact.png" name="contact" id="contact" onmouseover="MM_swapImage('contact','','/images/contact-over.png',1)" onmouseout="MM_swapImgRestore()"></a><a href="/services.html"><img src="/images/services.png" name="services" id="services" onmouseover="MM_swapImage('services','','/images/services-over.png',1)" onmouseout="MM_swapImgRestore()"></a><a href="/newsletter.html"><img src="/images/newsletter.png" name="newsletter" id="newsletter" onmouseover="MM_swapImage('newsletter','','/images/newsletter-over.png',1)" onmouseout="MM_swapImgRestore()"></a><a href="/about.html"><img src="/images/about.png" name="about" id="about" onmouseover="MM_swapImage('about','','/images/about-over.png',1)" onmouseout="MM_swapImgRestore()"></a>
+    	
+  </div>
+    <div id="body"><!-- InstanceBeginEditable name="EditRegion3" -->
+      <div class="auction-title"><strong> New Year's Day Sale</strong> <br />Antique & Collectible Auction<br /></div>
+     
+
+    <div class="auction-date"><span id="date">Saturday, January 1st</span><br /> 
+
+   </div>
+   <div class="auction-addr">810 Bellevue Ave.<br />Ottawa, Il 61350<br />
+      <a href="http://maps.google.com/maps?oi=map&amp;q=810+bellevue+ave,+ottawa,+IL+61350" target="_blank"><img src="/images/directions.png" /></a></div> 
+    <div class="auction-info" >
+    
+<!-- Updates coming soon!-->
+DUNCAN PHYFE TABLE W/CHAIRS, HUTCH, CI TRACTOR WHEELS, BUGGY WHEELS, IMPLEMENT WHEELS, 1800'S CHINA CABINET, DRESSERS, DROP FRONT SECRETARY HUTCH, THRESSHERMANS TABLE W/LEAVES, BED FRAMES, FISHING ITEMS, TOYS, ANT. FLOWER BASKETS,, SHOE STORE STOOL, WATERING CANS, DOLL BUGGYS, PRAM, SLEDS, ICE TONGS, KERO LAMPS, NORITAKE CHINA, PYREX BOWLS, PYREX REFRIGERATOR DISHES, MILITARUILTS,GERMAN STEINS, IMPLEMENT TOYS, McCOY VASES, LIBRARY TABLE, B & W PHOTOS, FRANKLIN TREADLE SEWING MACHINE, MAHOGANY WOOD, SAWS, TRAINS & TRACK, METAL YARD CHAIRS, RON LEE STATUES ONE IS SIGNED, SPORTS ITEMS, EMMETT KELLY SIGNED & NUMBERED PRINTS, BOOKS, HARD TIRE BIKE BY CURTISS,SPORTS POSTERS,FLOOR REGISTERS,LAMPS, VINTAGE SNAP ON TOOLS,VINTAGE FLOWER GIRL DRESS, COCA COLA CASES, 1914-1919 ZIEGFIELD FOLLIES MUSIC,SIVER PLATE SILVERWARE IN CASE,MANTLE CLOCK,COAL HOD &SHOVEL,NEONS,KEROSENE CANS,TRACTOR SEAT,BELLETONE AUDIOMETER,ICE SAWS,2GAL, BUTTER CHURN, METAL TONKA TOYS,CARNIVAL GLASS PITCHER /GLASS SET,YTRACTOR BOOK, COWBELLS,OLD BUBBLE LIGHTS,LOTS OF MISC. 
+ <p>   SEATING IS LIMITED, WEAR A MASK
+
+ <div dir="ltr">
+
+  
+  </div>
+  <!--End Auction-info--> 
+
+<div class="" style="text-align:center">
+For the latest auction info, <br />
+check out our 
+<a href="https://www.facebook.com/T-L-Auction-104521068447236">Facebook Page</a>
+<br />
+<div align="center">
+  <a href="https://www.facebook.com/pages/T&amp;L Auction https://www.facebook.com/T-L-Auction-104521068447236" target="_blank">
+    <img src="/images/find-us-on-facebook.png" width="200" />
+  </a>
+  
+</div>
+
+</div>
+<div id="disclaimer">
+<p>
+CASH OR CHECK W/PROPER ID ALSO CR. CARDS W/3% SURCHARGE.  NOT RESPONSIBLE FOR ACCIDENTS OR FOR ITEMS AFTER BEING SOLD. 
+7% TAX W/NEW ILLINOIS LAW.  ANNOUNCEMENTS MADE DAY OF SALE TAKE PRECEDENCE OVER PRINTED MATTER.  ALL SALES ARE FINAL. SOLD WHERE IS AS IS. </p>                                                                         
+	</div>    
+</div>
+
+
+<!--Photo Gallery-->
+<!--
+<div id="gallery" align="center">
+    <p><a name="Photo-Gallery" id="Photo-Gallery"></a></p>
+    <div class="galleryheader">Photo Gallery</div>
+
+
+
+</div>
+-->
+
+<!--End Gallery DIV-->
+
+
+
+ <a href="#" class="go-top">Go To Top</a>
+ <script>
+		$(document).ready(function() {
+			// Show or hide the sticky footer button
+			$(window).scroll(function() {
+				if ($(this).scrollTop() > 200) {
+					$('.go-top').fadeIn(400);
+				} else {
+					$('.go-top').fadeOut(400);
+				}
+			});
+			
+			// Animate the scroll to top
+			$('.go-top').click(function(event) {
+				event.preventDefault();
+				
+				$('html, body').animate({scrollTop: 0}, 300);
+			})
+		});
+	</script>
+    
+    
+ 
+    
+    <!-- InstanceEndEditable --></div>
+    <div id="footer">Copyright &copy;
+	<script type="text/javascript">
+		var theDate=new Date()
+		document.write(theDate.getFullYear())
+	</script> T&amp;L Auction Service - All Rights Reserved</div>
+    </div>
+</div>
+
+
+</div>
+  
+</div>
+
+</body>
+<!-- InstanceEnd --></html>
+
