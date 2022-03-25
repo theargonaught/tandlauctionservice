@@ -90,11 +90,11 @@ img {
 }
 
 .auction-title {
-	color:#fff;
+	color: #fff;
 	font-family: 'Arimo', sans-serif;
-	font-size:36px;
-	text-transform:capitalize;
-	text-align:center;
+	font-size: 36px;
+	text-transform: capitalize;
+	text-align: center;
 }
 
 .auction-date {
