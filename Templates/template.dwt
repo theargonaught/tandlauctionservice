@@ -69,7 +69,8 @@ function MM_swapImage() { //v3.0
     <div id="body">
     
     
-  <!-- TemplateBeginEditable name="EditRegion1" -->EditRegion1<!-- TemplateEndEditable --></div>
+  <!-- TemplateBeginEditable name="EditRegion1" -->EditRegion1<!-- TemplateEndEditable -->
+  </div>
     <div id="footer">Copyright &copy;
 	<script type="text/javascript">
 		var theDate=new Date()
