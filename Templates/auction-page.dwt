@@ -67,16 +67,7 @@ function MM_swapImage() { //v3.0
     	
   </div>
     <div id="body">
-	<!-- TemplateBeginEditable name="EditRegion3" -->
-    <div class="auction-title">Public Auction</div>
-    <div class="auction-date">friday, july 22nd</div>
-    <div class="auction-addr">810 Bellevue Ave.<br />Ottawa, Il 61350<br />
-      <a href="http://maps.google.com/maps?oi=map&amp;q=810+bellevue+ave,+ottawa,+IL+61350" target="_blank"><img src="http://www.tandlauctionservice.com/images/directions.png" /></a></div>
-    
-    <div class="auction-info"><p>This is sample text.  This is sample text.  This is sample text.  This is sample text.  This is sample text.  This is sample text.  This is sample text.  This is sample text.  This is sample text.  This is sample text.  This is sample text.  This is sample text.  
-
-<p><img src="http://www.tandlauctionservice.com/images/photogallery.png" />
-<div class="disclaimer">CASH OR KNOWN GOOD CHECK W/PROPER ID.  NOT RESPONSIBLE FOR ACCIDENTS OR FOR ITEMS AFTER BEING SOLD.  NO ITEMS REMOVED UNTIL SETTLED FOR.  ANNOUNCEMENTS MADE DAY OF SALE TAKE PRECEDENCE OVER PRINTED MATTER.  EVERYTHING SOLD AS IS.</div></div>
+	<!-- TemplateBeginEditable name="EditRegion1" -->
     
     <!-- TemplateEndEditable --></div>
     <div id="footer">Copyright &copy;
